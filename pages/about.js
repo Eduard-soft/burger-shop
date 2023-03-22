@@ -1,7 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 
-const AboutPage = props => {
+const AboutPage = () => {
 	return (
 		<div>
 			<h1>О нас</h1>
@@ -12,7 +10,5 @@ const AboutPage = props => {
 		</div>
 	)
 }
-
-AboutPage.propTypes = {}
 
 export default AboutPage
