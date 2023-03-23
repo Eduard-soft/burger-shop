@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+//работа с сетью //React useState, useEffect + NEXT.JS props
+
+//import React, { useState, useEffect } from "react";
 import Head from "next/head";
 
-const Reviews = () => {
-	const [reviews, setReviews] = useState([]);
+const Reviews = ({ reviews }) => {
+	//const [reviews, setReviews] = useState([]);
 
-	useEffect(() => {
-		const getData = async () => {
-			const response = await fetch('https://jsonplaceholder.typicode.com/comments');
-			const data = await response.json();
-			setReviews(data);
-		}
-		getData();
-	}, []);
+	// useEffect(() => {
+	// 	const getData = async () => {
+	// 		const response = await fetch('https://jsonplaceholder.typicode.com/comments');
+	// 		const data = await response.json();
+	// 		setReviews(data);
+	// 	}
+	// 	getData();
+	// }, []);
 
 	console.log(reviews)
 
@@ -39,4 +41,15 @@ const Reviews = () => {
 	)
 }
 
-export default Reviews
+export async function getServerSideProps() {
+	const response = await fetch('https://jsonplaceholder.typicode.com/comments');
+	const data = await response.json();
+
+	return {
+		props: {
+			reviews: data.slice(0, 20)
+		}
+	}
+}
+
+export default Reviews;
