@@ -24,14 +24,14 @@ const Burgers = ({ burgers }) => {
 					<Link href={`/burgers/${burger.id}`} key={burger.id} 
 					className={styles.burgerCard}>
 							<div className={styles.imageContainer}>
-								<Image
+								{/* <Image
 									src={`${burger.image}`}
 									alt={`${burger.name}`}
 									width="100%"
 									height="100%"
 									layout="responsive"
 									objectFit="cover"
-								/>
+								/> */}
 							</div>
 							<h3>{burger.name}</h3>
 							<p>{ burger.desc }</p>
