@@ -19,27 +19,25 @@ const Burgers = ({ burgers }) => {
 	return (
 		<div>
 			<h1>Наши бургеры</h1>
-			{burgers.map(burger => {
-				return (
+			{burgers.map(burger => (
 					<Link href={`/burgers/${burger.id}`} key={burger.id} 
 					className={styles.burgerCard}>
 							<div className={styles.imageContainer}>
-								<Image
+								{/* <Image
 									src={`${burger.image}`}
 									alt={`${burger.name}`}
 									width="100%"
 									height="100%"
 									layout="responsive"
 									objectFit="cover"
-								/>
+								/> */}
 							</div>
 							<h3>{burger.name}</h3>
 							<p>{ burger.desc }</p>
 					</Link>
-				)
-			})}
+			))}
 		</div>
-	)
+	);
 }
 
 export default Burgers;
