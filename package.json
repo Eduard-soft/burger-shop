@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "json-server": "json-server --watch db.json --port 5000",
+    "serve": "concurrently \"npm run dev\" \"npm run json-server\"",
     "build-api": "concurrently \"npm run build\" \"npm run json-server\""
-    
   },
   "dependencies": {
     "@next/font": "13.2.4",
