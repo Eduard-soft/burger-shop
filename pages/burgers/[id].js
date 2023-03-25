@@ -45,6 +45,7 @@ const Details = ({ burger }) => {
 						/> */}
 			</div>
 			<p>{ burger.desc }</p>
+			<h3>{`Цена ${burger.price} рублей`}</h3>
 		</div>
 	)
 }
